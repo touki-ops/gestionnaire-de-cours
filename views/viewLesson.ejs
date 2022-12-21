@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/viewLesson.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <a href="/lessons/<%= lessonsImg[0] %>" class="arrow">
+        <div></div>
+        <div></div>
+    </a>
+    <img src="/lessons/<%= lessonsImg[1] %>" id="img">
+    <a href="/lessons/<%= lessonsImg[2] %>" class="arrow">
+        <div></div>
+        <div></div>
+    </a>
+    <a href="/" id="home"><img src="/images/home.png"></a>
+    <img src="/images/info.svg" id="info">
+    <p style="display: none;"><%= lessonsImg[1].split('|')[1].split('_').join(' ') %> </br><%= lessonsImg[2].split('|')[2] %> / <%= lessonsImg[0].split('|')[0] %></p>
+    <script src="/js/slider.js"></script>
+</body>
+</html>

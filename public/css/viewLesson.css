@@ -1,0 +1,87 @@
+:root {
+  --info-display: 'none';
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto Mono, sans-serif;
+}
+
+body .arrow {
+  cursor: pointer;
+  padding-top: 15px;
+  height: 50px;
+}
+
+body .arrow div {
+  width: 40px;
+  height: 4px;
+  background-color: black;
+}
+
+body .arrow div:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+body .arrow div:nth-child(2) {
+  -webkit-transform: translateY(22px) rotate(-45deg);
+          transform: translateY(22px) rotate(-45deg);
+}
+
+body .arrow:first-child {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  margin-top: -7px;
+}
+
+body #img {
+  border: solid black 3px;
+}
+
+body #home {
+  position: fixed;
+  top: 5vh;
+  left: 5vw;
+}
+
+body #home img {
+  width: 30px;
+  display: block;
+  cursor: pointer;
+}
+
+body #info {
+  width: 30px;
+  position: fixed;
+  top: 5vh;
+  right: 5vw;
+  display: block;
+  cursor: pointer;
+}
+
+body p {
+  position: fixed;
+  top: calc(35px + 5vh);
+  right: 1vw;
+  background-color: white;
+  margin: 0;
+  padding: 15px;
+  border-radius: 10px;
+  border: solid black 2px;
+}
+/*# sourceMappingURL=viewLesson.css.map */

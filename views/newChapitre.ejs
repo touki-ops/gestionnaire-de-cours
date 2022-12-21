@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau Chapitre</title>
+    <link rel="stylesheet" href="/css/newChapitre.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div id="buttonMenu">
+        <div class="barre"></div>
+        <div class="barre"></div>
+        <div class="barre"></div>
+    </div>
+    <nav id="nav">
+        <a href="/"><img src="/images/home.png"></a>
+        <ul>
+            <a href="/newChapitre">Creer un nouveau chapitre</a>
+            <a href="#">Liste des devoirs</a>
+            <a href="#">Emploie du temps</a>
+        </ul>
+    </nav>
+    <form action="createNewChapitre" method="post">
+        <h1></h1>
+        <span style="display: block; overflow: hidden;"><input type="text" id="titre" name="titre" placeholder="Le titre du chapitre"></span>
+        <span style="display: block; overflow: hidden;"><input type="text" id="matiere" name="matiere" placeholder="La matiere du chapitre"></span>
+        <span style="display: block; overflow: hidden;"><input type="submit" value="Creer"></span>
+
+        <script src="/js/newChapitre.js"></script>
+    </form>
+</body>
+</html>

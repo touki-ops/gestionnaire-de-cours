@@ -1,0 +1,664 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Roboto Mono, sans-serif;
+  background-color: var(--theme-color);
+  color: var(--second-color);
+  -webkit-filter: blur(50%);
+          filter: blur(50%);
+}
+
+body header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 95%;
+}
+
+body header #buttonMenu {
+  padding: 10px;
+  cursor: pointer;
+}
+
+body header #buttonMenu .barre {
+  height: 4px;
+  width: 30px;
+  background-color: var(--second-color);
+  margin-top: 3px;
+  border-radius: 2px;
+  -webkit-animation: opacity 200ms linear;
+          animation: opacity 200ms linear;
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+  opacity: 0;
+}
+
+body header #buttonMenu .barre:first-child {
+  margin-top: 0;
+}
+
+body header #buttonMenu .barre:nth-child(2) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+
+body header #buttonMenu .barre:nth-child(3) {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+
+body header h1 {
+  font-size: 40px;
+  text-decoration: underline;
+  -webkit-animation: h1_enter 500ms ease-in-out;
+          animation: h1_enter 500ms ease-in-out;
+}
+
+@-webkit-keyframes h1_enter {
+  from {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes h1_enter {
+  from {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+body header #new_lesson {
+  cursor: pointer;
+  background-color: var(--theme-color);
+  border-radius: 10px;
+  color: var(--second-color);
+  border: solid var(--second-color) 2px;
+  padding: 10px;
+  width: 130px;
+  -webkit-transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+  transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+  -webkit-animation: button_enter 300ms ease-in-out;
+          animation: button_enter 300ms ease-in-out;
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+  opacity: 0;
+}
+
+body header #new_lesson:hover {
+  background-color: var(--second-color);
+  color: var(--theme-color);
+}
+
+body #tri {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 95%;
+  padding: 0 20px;
+  -webkit-animation: button_enter 300ms ease-in-out;
+          animation: button_enter 300ms ease-in-out;
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+  opacity: 0;
+}
+
+body #tri select {
+  cursor: pointer;
+  margin-left: 10px;
+  border: solid var(--second-color) 2px;
+  border-radius: 5px;
+  width: 130px;
+  background-color: var(--theme-color);
+  -webkit-transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+  transition: background-color 100ms ease-in-out, color 100ms ease-in-out;
+  color: var(--second-color);
+}
+
+body #tri select:first-child {
+  width: 150px;
+}
+
+body #tri select:hover {
+  background-color: var(--second-color);
+  color: var(--theme-color);
+}
+
+body #nav {
+  position: absolute;
+  background-color: #1189b4;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: -100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body #nav img {
+  position: absolute;
+  padding: 10px;
+  top: 2.5vw;
+  left: 2.7vw;
+  height: 30px;
+  cursor: pointer;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
+body #nav ul {
+  margin-top: -100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body #nav ul a {
+  color: white;
+  text-decoration: none;
+  font-size: 40px;
+  list-style: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+body #nav ul a:hover {
+  text-decoration: underline;
+}
+
+@-webkit-keyframes button_enter {
+  from {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes button_enter {
+  from {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+body #lessons {
+  margin-top: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[5];
+      grid-template-columns: repeat(5, minmax(300px, 1fr));
+  grid-gap: 10px;
+}
+
+@-webkit-keyframes lessons_left {
+  from {
+    opacity: 1;
+    margin-top: 20px;
+  }
+  to {
+    opacity: 0;
+    margin-top: 200px;
+  }
+}
+
+@keyframes lessons_left {
+  from {
+    opacity: 1;
+    margin-top: 20px;
+  }
+  to {
+    opacity: 0;
+    margin-top: 200px;
+  }
+}
+
+@-webkit-keyframes lessons_enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lessons_enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body #lessons .conteneur .lesson {
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 20px 10px;
+  border-radius: 10px;
+  color: white;
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  height: 85.5px;
+  width: 334px;
+  -webkit-animation: lessons_enter 400ms ease-in-out;
+          animation: lessons_enter 400ms ease-in-out;
+}
+
+body #lessons .conteneur .lesson h2 {
+  margin: 0 0 10px 0;
+}
+
+body #lessons .conteneur .lesson ul {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: calc(100% - 20px);
+}
+
+body #lessons .conteneur .lesson ul li {
+  list-style: none;
+}
+
+body #lessons .conteneur .lesson ul li:nth-child(1) {
+  margin-right: 7.5px;
+}
+
+body #lessons .conteneur .lesson ul li:nth-child(2) {
+  text-align: end;
+}
+
+body #lessons .conteneur .lesson.anglais {
+  background-color: #333333;
+}
+
+body #lessons .conteneur .lesson.francais {
+  background-color: #ad355d;
+}
+
+body #lessons .conteneur .lesson.math {
+  background-color: #1a1a71;
+}
+
+body #lessons .conteneur .lesson.SVT {
+  background-color: green;
+}
+
+body #lessons .conteneur .lesson.espagnole {
+  background-color: #e5c700;
+}
+
+body #lessons .conteneur .lesson.technologie {
+  background-color: blue;
+}
+
+body #lessons .conteneur .lesson.art {
+  background-color: #b80000;
+}
+
+body #lessons .conteneur .lesson.musique {
+  background-color: burlywood;
+}
+
+body #lessons .conteneur .lesson.histoire {
+  background-color: purple;
+}
+
+body #lessons .conteneur .lesson.physique {
+  background-color: cadetblue;
+}
+
+body #lessons .conteneur .lesson.latin {
+  background-color: #9d6305;
+}
+
+body #lessons .conteneur .lesson img {
+  cursor: pointer;
+  display: none;
+  height: 100%;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+}
+
+body #lessons .conteneur .lesson img:hover {
+  -webkit-transform: scale(2) rotateX(180deg);
+          transform: scale(2) rotateX(180deg);
+}
+
+body #lessons .conteneur .lesson img.img:hover {
+  border: 1px solid var(--second-color);
+}
+
+body #lessons .conteneur:hover .lesson {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+body #lessons .conteneur:hover .lesson h2, body #lessons .conteneur:hover .lesson ul {
+  display: none;
+}
+
+body #lessons .conteneur:hover .lesson img, body #lessons .conteneur:hover .lesson embed {
+  display: block;
+}
+
+body #upload_lesson {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--theme-color);
+  position: absolute;
+  top: 5vh;
+  padding: 40px;
+  border-radius: 20px;
+  -webkit-box-shadow: gray 0px 0px 40px;
+          box-shadow: gray 0px 0px 40px;
+  -webkit-animation: opacity 100ms ease-in-out;
+          animation: opacity 100ms ease-in-out;
+}
+
+body #upload_lesson h1 {
+  margin-top: 0;
+  font-size: 40px;
+  text-align: center;
+}
+
+body #upload_lesson form {
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #upload_lesson form[action="saveOption"] input, body #upload_lesson form[action="saveOption"] select, body #upload_lesson form[action="saveOption"] button {
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: solid var(--second-color) 1px;
+  width: 30vw;
+  color: var(--second-color);
+}
+
+body #upload_lesson form[action="saveOption"] input[type='text'] {
+  width: 28.5vw;
+  background-color: var(--theme-color);
+}
+
+body #upload_lesson form[action="saveOption"] input[type='text']:focus {
+  outline: 2px solid #03037a;
+  border: none;
+}
+
+body #upload_lesson form[action="saveOption"] select {
+  margin-top: 10px;
+  background-color: var(--theme-color);
+}
+
+body #upload_lesson form[action="saveOption"] input[type='submit'] {
+  margin-top: 10px;
+  background-color: #03037a;
+  border: none;
+}
+
+body #upload_lesson form[action="saveLesson"] {
+  display: none;
+}
+
+body #upload_lesson form[action="saveLesson"] input[type='file'] {
+  width: 50px;
+  position: absolute;
+  height: 50px;
+  opacity: 0;
+  cursor: pointer;
+  margin-top: -60px;
+}
+
+body #upload_lesson form[action="saveLesson"] img {
+  width: 50px;
+}
+
+body #upload_lesson form[action="saveLesson"] p {
+  margin-bottom: 0;
+}
+
+body #upload_lesson form[action="saveLesson"] input[type='submit'] {
+  margin-top: 20px;
+  background-color: var(--theme-color);
+  border: solid var(--second-color) 1px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+body #upload_lesson #quit {
+  position: absolute;
+  height: 20px;
+  top: 15px;
+  left: 15px;
+  cursor: pointer;
+  -webkit-transition: 100ms -webkit-transform linear;
+  transition: 100ms -webkit-transform linear;
+  transition: 100ms transform linear;
+  transition: 100ms transform linear, 100ms -webkit-transform linear;
+}
+
+body #upload_lesson #quit:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+@media (max-width: calc(354px * 5 + 10px * 7)) {
+  body #lessons {
+    -ms-grid-columns: (minmax(354px, 1fr))[4];
+        grid-template-columns: repeat(4, minmax(354px, 1fr));
+  }
+}
+
+@media (max-width: calc(354px * 5 + 10px * 7)) and (max-width: calc(354px * 4 + 10px * 6)) {
+  body #lessons {
+    -ms-grid-columns: (minmax(354px, 1fr))[3];
+        grid-template-columns: repeat(3, minmax(354px, 1fr));
+  }
+}
+
+@media (max-width: calc(354px * 5 + 10px * 7)) and (max-width: calc(354px * 4 + 10px * 6)) and (max-width: calc(354px * 3 + 10px * 5)) {
+  body #lessons {
+    -ms-grid-columns: (minmax(354px, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(354px, 1fr));
+  }
+}
+
+@media (max-width: calc(354px * 5 + 10px * 7)) and (max-width: calc(354px * 4 + 10px * 6)) and (max-width: calc(354px * 3 + 10px * 5)) and (max-width: calc(354px * 2 + 10px * 4)) {
+  body {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin: 0;
+  }
+  body h1 {
+    margin-left: calc(5vw - 10px);
+  }
+  body #tri {
+    padding: 0 10px 0 0;
+  }
+  body #lessons {
+    margin-left: calc((100vw - 354px) / 2);
+    -ms-grid-columns: (minmax(300px, 1fr))[1];
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
+  body #lessons .lesson {
+    width: 90vw;
+  }
+  body #upload_lesson {
+    width: 95vw;
+    padding: 30px 0;
+    margin-left: 2.5vw;
+  }
+  body #upload_lesson h1 {
+    font-size: 30px;
+  }
+  body #upload_lesson form[action="saveOption"] {
+    padding: 0%;
+  }
+  body #upload_lesson form[action="saveOption"] input, body #upload_lesson form[action="saveOption"] select, body #upload_lesson form[action="saveOption"] #titre {
+    width: 80VW;
+  }
+  body button {
+    right: calc(5vw - 10px);
+  }
+}
+
+@media (max-width: calc(354px * 5 + 10px * 7)) {
+  @-webkit-keyframes opacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes opacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-color: rgb(30, 30, 30);
+    --second-color: white;
+    --pourcentage-color: 100%;
+  }
+  #quit {
+    -webkit-filter: invert(1);
+            filter: invert(1);
+  }
+  input[value='suivant'] {
+    color: var(--second-color);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --theme-color: white;
+    --second-color: rgb(30, 30, 30);
+    --pourcentage-color: 0%;
+  }
+  input[value='suivant'] {
+    color: var(--theme-color);
+  }
+}
+/*# sourceMappingURL=style.css.map */

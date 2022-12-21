@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <header>
+        <div id="buttonMenu">
+            <div class="barre"></div>
+            <div class="barre"></div>
+            <div class="barre"></div>
+        </div>
+        <span style="display: block; overflow: hidden;"><h1>Leçons</h1></span>
+        <button id="new_lesson">Ajouter une nouvelle leçon</button>
+    </header>
+    <nav id="tri">
+        <select name="triMatiere" id="triMatiere">
+            <option value="default" selected>Choisisez la matière</option>
+            <option value="francais">Français</option>
+            <option value="math">Mathématiques</option>
+            <option value="SVT">SVT</option>
+            <option value="physique">Physique Chimie</option>
+            <option value="histoire">Histoire Géo EMC</option>
+            <option value="anglais">Anglais</option>
+            <option value="espagnole">Espagnole</option>
+            <option value="musique">Musique</option>
+            <option value="technologie">Technologie</option>
+            <option value="latin">Latin</option>
+            <option value="art">Art Plastique</option>
+        </select>
+        <select name="triChapitre" id="triChapitre">
+            <option value="false" selected>Non Référencé</option>
+            <% for(chapitre of chapitres) { %>
+                <option value="<%= chapitre.titre %>"><%= chapitre.titre %></option>
+            <% } %>
+        </select>
+    </nav>
+    <nav id="nav">
+        <img src="/images/home.png" alt="">
+        <ul>
+            <a href="/newChapitre">Creer un nouveau chapitre</a>
+            <a href="#">Liste des devoirs</a>
+            <a href="#">Emploie du temps</a>
+        </ul>
+    </nav>
+    <section id="lessons">
+        <% const matiere = {
+            'francais': 'Français',
+            'math': 'Mathématiques',
+            'SVT': 'SVT',
+            'anglais': 'Anglais',
+            'espagnole': 'Espagnole',
+            'art': 'Art Plastique',
+            'musique': 'Musique',
+            'Latin': 'Français',
+            'technologie': 'Technologie',
+            'histoire': 'Histoire Géo EMC',
+            'physique': 'Physique Chimie',
+        }
+        for (let i = 0; i < lessons.length; i++) {
+            lesson = lessons[i] 
+            const titre = lesson[1].split('_').join(' ') %>
+            <article class="conteneur"><div class="lesson <%= lesson[2][0] %>">
+                <h2><%= titre %></h2>
+                <ul>
+                    <li><%= matiere[lesson[2][0]] %></li>
+                    <li><%= lesson[0] %></li>
+                </ul>
+                <% if(lesson[2][1] == 'pdf') { %>
+                    <img src='/images/pdf.png' alt="/lessons/<%= lesson[0] %>|<%= lesson[1] %>|<%= lesson[2][0] %>.<%= lesson[2][1] %>">
+                <% } else { %>
+                    <img class="img" src="/lessons/<%= lesson[0] %>|<%= lesson[1] %>|<%= lesson[2][0] %>.<%= lesson[2][1] %>">
+                <% } %>
+                </div></article>
+        <% } %>
+    </section>
+
+    <section id="upload_lesson" style="<% if(saveOption == true) { %>display: flex<% } %>">
+        <h1>Enregistrer </br>une nouvelle leçon</h1>
+
+        <form action="saveOption" method="post" style="<% if(saveOption == true) { %>display: none<% } %>">    
+            <input type="text" name="titre" id="titre" placeholder="Titre de la leçon">
+            <select name="matiere" id="matiere">
+                <option value="default" selected>Choisisez la matière</option>
+                <option value="francais">Français</option>
+                <option value="math">Mathématiques</option>
+                <option value="SVT">SVT</option>
+                <option value="physique">Physique Chimie</option>
+                <option value="histoire">Histoire Géo EMC</option>
+                <option value="anglais">Anglais</option>
+                <option value="espagnole">Espagnole</option>
+                <option value="musique">Musique</option>
+                <option value="technologie">Technologie</option>
+                <option value="latin">Latin</option>
+                <option value="art">Art Plastique</option>
+            </select>
+            <select name="chapitre" id="chapitre">
+                <option value="false">Non Référencé</option>
+                <% for(chapitre of chapitres) { %>
+                    <option value="<%= chapitre.titre %>"><%= chapitre.titre %></option>
+                <% } %>
+            </select>
+            <input type="submit" value="Suivant">
+        </form>
+        <form action="saveLesson" method="post" enctype="multipart/form-data" style="<% if(saveOption == true) { %>display: flex; border: solid black 1px<% } %>">    
+            <img src="/images/img.png">
+            <input type="file" id="saveLesson" name="saveLesson" accept="image/*, .pdf, .doc, .docx, .odt, .pptx">
+            <p></p>
+            <input type="submit" name="submit" id="submit" value="Enregister la lesson">
+        </form>
+        <img src="/images/quit.svg" id="quit">
+    </section>
+    <input type="hidden" value="<%= searchMatiere %>" id="searchMatiere">
+    <script src="/js/app.js"></script>
+</body>
+</html>
